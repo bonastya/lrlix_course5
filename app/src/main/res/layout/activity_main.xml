@@ -11,12 +11,25 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:textColor="@color/white"
         android:fontFamily="@font/roboto_medium"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         android:text="Reels"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toTopOf="@+id/guideline_top" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top"
+        app:srcCompat="@drawable/camera" />
+
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
@@ -71,6 +84,12 @@
         app:layout_constraintStart_toEndOf="@+id/imageProfile"
         app:layout_constraintTop_toTopOf="@+id/imageProfile" />
 
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="personName," />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/followButton"
@@ -85,7 +104,7 @@
         android:textSize="14dp"
         app:backgroundTint="@android:color/transparent"
         app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/personName"
+        app:layout_constraintBottom_toBottomOf="@+id/barrier"
         app:layout_constraintStart_toEndOf="@+id/personName"
         app:layout_constraintTop_toTopOf="@+id/personName"
         app:strokeColor="@color/white"
@@ -126,14 +145,7 @@
         app:layout_constraintTop_toTopOf="@+id/musicIco" />
 
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-        app:layout_constraintTop_toTopOf="@+id/textView"
-        app:srcCompat="@drawable/camera" />
+
 
 
     <LinearLayout
